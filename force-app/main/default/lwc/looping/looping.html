@@ -1,0 +1,29 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 10-15-2021
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title = "For Looping" icon-name="custom:custom14">
+        <ul class="slds-var-m-around_medium forEachList">
+            <template for:each={userList} for:item = "user">
+                <li key = {user.Id}>
+                    {user.Name}
+                </li>
+            </template>
+        </ul> 
+    </lightning-card>
+    <lightning-card title = "Iterator Looping" icon-name="custom:custom14">
+        <ul class="slds-var-m-around_medium iteratorList">
+            <template iterator:user={userList}>
+                <li key = {user.value.Id}>
+                    <div if:true={user.first} class="slds-test-heading_large">Start Of List</div>
+                    <div class="mainList">{user.value.Name}</div>
+                    <div if:true={user.last} class="slds-test-heading_large">End Of List</div>
+                </li>
+            </template>
+        </ul> 
+    </lightning-card>
+</template>

@@ -1,0 +1,22 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 10-19-2021
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Apex imparitive testing">
+        <div class="slds-var-m-around_medium">
+            <lightning-button label="Load Accounts" onclick={loadAccounts}></lightning-button>
+        </div>
+        <template if:true={accounts}>
+            <template for:each={accounts} for:item="account">
+                <p key={account.Id} class="acc">{account.Name}</p>
+            </template>
+        </template>
+        <template if:true={errors}>
+            <p class="err">{errors}</p>
+        </template>  
+    </lightning-card>
+</template>

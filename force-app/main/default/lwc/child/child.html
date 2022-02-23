@@ -1,0 +1,19 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 10-16-2021
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <template if:true={userDetail}>
+        <lightning-layout vertical-align = "center">
+            <lightning-layout-item>
+                <div class='uname'>{userDetail.Name}</div>
+            </lightning-layout-item>
+        </lightning-layout>
+        <template if:false={userDetail}>
+            <p class="yo">No User Data Available.</p>
+        </template>
+    </template>
+</template>
